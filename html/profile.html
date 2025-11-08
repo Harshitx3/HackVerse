@@ -10,8 +10,146 @@
 </head>
 <body>
     <div class="profile-setup-container">
+        <!-- Dashboard Sidebar -->
+        <div class="dashboard-sidebar">
+            <div class="dashboard-header">
+                <button class="sidebar-close" aria-label="Close sidebar">×</button>
+                <div class="dashboard-logo">
+                    <i class="fas fa-code"></i>
+                    <span>Skill Set</span>
+                </div>
+                <div class="dashboard-user">
+                    <div class="user-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="user-info">
+                        <span class="user-name">New User</span>
+                        <span class="user-role">Setting up profile</span>
+                    </div>
+                </div>
+            </div>
+            
+            <nav class="dashboard-nav">
+                <div class="nav-section">
+                    <h3 class="nav-title">Main</h3>
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link active">
+                                <i class="fas fa-user-edit"></i>
+                                <span>Profile Setup</span>
+                                <i class="fas fa-chevron-right nav-arrow"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="fas fa-tachometer-alt"></i>
+                                <span>Dashboard</span>
+                                <i class="fas fa-chevron-right nav-arrow"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="fas fa-project-diagram"></i>
+                                <span>Projects</span>
+                                <i class="fas fa-chevron-right nav-arrow"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="fas fa-users"></i>
+                                <span>Team</span>
+                                <i class="fas fa-chevron-right nav-arrow"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="nav-section">
+                    <h3 class="nav-title">Tools</h3>
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="fas fa-search"></i>
+                                <span>Find Partners</span>
+                                <i class="fas fa-chevron-right nav-arrow"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="fas fa-comments"></i>
+                                <span>Messages</span>
+                                <span class="nav-badge">3</span>
+                                <i class="fas fa-chevron-right nav-arrow"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="fas fa-calendar"></i>
+                                <span>Calendar</span>
+                                <i class="fas fa-chevron-right nav-arrow"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="fas fa-chart-line"></i>
+                                <span>Analytics</span>
+                                <i class="fas fa-chevron-right nav-arrow"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="nav-section">
+                    <h3 class="nav-title">Resources</h3>
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="fas fa-book"></i>
+                                <span>Documentation</span>
+                                <i class="fas fa-chevron-right nav-arrow"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="fas fa-question-circle"></i>
+                                <span>Help Center</span>
+                                <i class="fas fa-chevron-right nav-arrow"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="fas fa-cog"></i>
+                                <span>Settings</span>
+                                <i class="fas fa-chevron-right nav-arrow"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            
+            <div class="dashboard-footer">
+                <div class="progress-section">
+                    <h4 class="progress-title">Profile Completion</h4>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="profileProgress"></div>
+                    </div>
+                    <span class="progress-text" id="progressText">0% Complete</span>
+                </div>
+                
+                <div class="dashboard-actions">
+                    <button type="button" class="btn btn-outline btn-small" onclick="resetForm()">
+                        <i class="fas fa-redo"></i>
+                        Reset
+                    </button>
+                    <button type="button" class="btn btn-gradient btn-small" onclick="saveProfile()">
+                        <i class="fas fa-save"></i>
+                        Save
+                    </button>
+                </div>
+            </div>
+        </div>
+
         <div class="profile-setup-content">
-            <!-- Left Column - Profile Setup Form -->
             <div class="profile-form-section">
                 <div class="form-header">
                     <h1 class="setup-title">Set Up Your Profile</h1>
