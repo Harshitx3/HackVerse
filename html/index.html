@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillSet - Find Your Perfect Project Partner</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .mobile-menu-toggle {
+            display: none;
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1100;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: none;
+            border-radius: 12px;
+            padding: 12px;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+        
+        @media (max-width: 1024px) {
+            .mobile-menu-toggle {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Mobile Menu Toggle -->
+    <button class="mobile-menu-toggle" id="mobileMenuToggle">
+        <i class="fas fa-bars"></i>
+    </button>
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar">
+        <div class="sidebar-header">
+            <div class="logo">
+                <div class="logo-icon"></div>
+            </div>
+        </div>
+        
+        <div class="nav-items">
+            <a href="#" class="nav-item active">
+                <div class="nav-icon dashboard-icon"></div>
+                <span>Dashboard</span>
+            </a>
+            <a href="#" class="nav-item">
+                <div class="nav-icon discover-icon"></div>
+                <span>Discover</span>
+            </a>
+            <a href="#" class="nav-item">
+                <div class="nav-icon chat-icon"></div>
+                <span>Chat</span>
+            </a>
+            <a href="#" class="nav-item">
+                <div class="nav-icon info-icon"></div>
+                <span>Info</span>
+            </a>
+        </div>
+        
+        <div class="sidebar-footer">
+            <button class="login-btn">Login</button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1 class="hero-title">Find your perfect project partner.</h1>
+                <p class="hero-subtitle">Connect with developers based on your skills, interests, and project goals to build amazing things together.</p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary">Sign Up</button>
+                    <button class="btn btn-secondary">Login</button>
+                </div>
+            </div>
+            <div class="hero-graphic">
+                <div class="graphic-box">
+                    <div class="graphic-text">
+                        <i class="fas fa-code"></i>
+                        <span>Skills</span>
+                    </div>
+                    <div class="graphic-icons">
+                        <i class="fab fa-js-square"></i>
+                        <i class="fab fa-python"></i>
+                        <i class="fab fa-react"></i>
+                        <i class="fab fa-node-js"></i>
+                        <i class="fas fa-database"></i>
+                        <i class="fab fa-figma"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Join Us Section -->
+        <section class="why-join">
+            <div class="section-header">
+                <h2 class="section-title">Why Join Us?</h2>
+                <p class="section-subtitle">Our platform is designed to make collaboration seamless and effective.</p>
+            </div>
+            
+            <div class="features">
+                <div class="feature-card">
+                    <div class="feature-icon ai-icon"></div>
+                    <h3>AI-Powered Matching</h3>
+                    <p>Our smart algorithm connects you with the most compatible partners for your projects.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon showcase-icon"></div>
+                    <h3>Showcase Your Skills</h3>
+                    <p>Create a stunning portfolio to highlight your expertise and attract collaborators.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon collaborate-icon"></div>
+                    <h3>Collaborate in Real-Time</h3>
+                    <p>Work together seamlessly with integrated tools and communication channels.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="testimonials">
+            <div class="section-header">
+                <h2 class="section-title">Trusted by Developers Worldwide</h2>
+            </div>
+            
+            <div class="testimonial-cards">
+                <div class="testimonial-card">
+                    <div class="testimonial-photo"></div>
+                    <div class="testimonial-content">
+                        <h4>Alex Johnson</h4>
+                        <p class="testimonial-role">Frontend Developer</p>
+                        <p class="testimonial-text">"SkillSet helped me find the perfect backend developer for my startup. The matching algorithm is incredibly accurate!"</p>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-photo"></div>
+                    <div class="testimonial-content">
+                        <h4>Sarah Lee</h4>
+                        <p class="testimonial-role">Data Scientist</p>
+                        <p class="testimonial-text">"I've connected with amazing ML engineers through this platform. It's revolutionized how I approach collaborative projects."</p>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-photo"></div>
+                    <div class="testimonial-content">
+                        <h4>Michael Chen</h4>
+                        <p class="testimonial-role">Mobile App Developer</p>
+                        <p class="testimonial-text">"The real-time collaboration tools make working with remote teams so much easier. Highly recommend!"</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta">
+            <div class="cta-content">
+                <h2 class="cta-title">Ready to Build Something Amazing?</h2>
+                <p class="cta-subtitle">Join a community of passionate developers and start your next collaborative project today.</p>
+                <button class="btn btn-cta">Get Started</button>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <p class="footer-text">© 2024 DevMatch. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#" class="footer-link">Contact</a>
+                    <a href="#" class="footer-link">Privacy Policy</a>
+                    <a href="#" class="footer-link">Terms of Service</a>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>
