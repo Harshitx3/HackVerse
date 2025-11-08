@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messages - Skill Set</title>
+    <link rel="stylesheet" href="messages.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="messages-container">
+        <!-- Mobile Header -->
+        <div class="mobile-header">
+            <button class="mobile-menu-toggle" aria-label="Toggle conversations">
+                <i class="fas fa-bars"></i>
+            </button>
+            <h1>Messages</h1>
+        </div>
+
+        <!-- Left Sidebar - Conversations List -->
+        <aside class="conversations-sidebar" id="conversationsSidebar">
+            <div class="sidebar-header">
+                <h2>Conversations</h2>
+                <button class="new-chat-btn" aria-label="Start new conversation">
+                    <i class="fas fa-plus"></i>
+                </button>
+            </div>
+            
+            <div class="search-container">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search conversations..." id="searchInput">
+                </div>
+            </div>
+            
+            <div class="conversations-list" id="conversationsList">
+                <!-- Conversations will be populated by JavaScript -->
+            </div>
+        </aside>
+
+        <!-- Main Chat Area -->
+        <main class="chat-area" id="chatArea">
+            <!-- Chat Header -->
+            <header class="chat-header" id="chatHeader">
+                <div class="chat-header-info">
+                    <img src="" alt="Contact avatar" class="contact-avatar" id="contactAvatar">
+                    <div class="contact-details">
+                        <h3 id="contactName">Select a conversation</h3>
+                        <span class="typing-indicator" id="typingIndicator"></span>
+                    </div>
+                </div>
+                <div class="chat-header-actions">
+                    <button class="header-btn" aria-label="Start voice call">
+                        <i class="fas fa-phone"></i>
+                    </button>
+                    <button class="header-btn" aria-label="Start video call">
+                        <i class="fas fa-video"></i>
+                    </button>
+                    <button class="header-btn" aria-label="More options">
+                        <i class="fas fa-ellipsis-v"></i>
+                    </button>
+                </div>
+            </header>
+
+            <!-- Messages Container -->
+            <div class="messages-container-inner" id="messagesContainer">
+                <div class="messages-list" id="messagesList">
+                    <!-- Messages will be populated by JavaScript -->
+                </div>
+            </div>
+
+            <!-- Message Input Area -->
+            <div class="message-input-container">
+                <div class="message-input-wrapper">
+                    <button class="attachment-btn" aria-label="Add attachment">
+                        <i class="fas fa-paperclip"></i>
+                    </button>
+                    <div class="message-input-area">
+                        <input type="text" 
+                               placeholder="Type a message..." 
+                               id="messageInput"
+                               autocomplete="off">
+                        <button class="emoji-btn" aria-label="Add emoji">
+                            <i class="far fa-smile"></i>
+                        </button>
+                    </div>
+                    <button class="send-btn" id="sendButton" aria-label="Send message">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+        </main>
+
+        <!-- Empty State -->
+        <div class="empty-state" id="emptyState">
+            <div class="empty-state-content">
+                <i class="fas fa-comments"></i>
+                <h3>Select a conversation</h3>
+                <p>Choose a conversation from the sidebar to start messaging</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="messages.js"></script>
+</body>
+</html>
