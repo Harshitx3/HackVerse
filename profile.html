@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skill Set - Profile Setup</title>
+    <link rel="stylesheet" href="profile.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="profile-setup-container">
+        <!-- Dashboard Sidebar -->
+        <div class="dashboard-sidebar">
+            <div class="dashboard-header">
+                <button class="sidebar-close" aria-label="Close sidebar">×</button>
+                <div class="dashboard-logo">
+                    <i class="fas fa-code"></i>
+                    <span>Skill Set</span>
+                </div>
+                <div class="dashboard-user">
+                    <div class="user-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="user-info">
+                        <span class="user-name">New User</span>
+                        <span class="user-role">Setting up profile</span>
+                    </div>
+                </div>
+            </div>
+            
+            <nav class="dashboard-nav">
+                <div class="nav-section">
+                    <h3 class="nav-title">Main</h3>
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link active">
+                                <i class="fas fa-user-edit"></i>
+                                <span>Profile Setup</span>
+                                <i class="fas fa-chevron-right nav-arrow"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="fas fa-tachometer-alt"></i>
+                                <span>Dashboard</span>
+                                <i class="fas fa-chevron-right nav-arrow"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="fas fa-project-diagram"></i>
+                                <span>Projects</span>
+                                <i class="fas fa-chevron-right nav-arrow"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="fas fa-users"></i>
+                                <span>Team</span>
+                                <i class="fas fa-chevron-right nav-arrow"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="nav-section">
+                    <h3 class="nav-title">Tools</h3>
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="fas fa-search"></i>
+                                <span>Find Partners</span>
+                                <i class="fas fa-chevron-right nav-arrow"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="fas fa-comments"></i>
+                                <span>Messages</span>
+                                <span class="nav-badge">3</span>
+                                <i class="fas fa-chevron-right nav-arrow"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="fas fa-calendar"></i>
+                                <span>Calendar</span>
+                                <i class="fas fa-chevron-right nav-arrow"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="fas fa-chart-line"></i>
+                                <span>Analytics</span>
+                                <i class="fas fa-chevron-right nav-arrow"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="nav-section">
+                    <h3 class="nav-title">Resources</h3>
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="fas fa-book"></i>
+                                <span>Documentation</span>
+                                <i class="fas fa-chevron-right nav-arrow"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="fas fa-question-circle"></i>
+                                <span>Help Center</span>
+                                <i class="fas fa-chevron-right nav-arrow"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="fas fa-cog"></i>
+                                <span>Settings</span>
+                                <i class="fas fa-chevron-right nav-arrow"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            
+            <div class="dashboard-footer">
+                <div class="progress-section">
+                    <h4 class="progress-title">Profile Completion</h4>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="profileProgress"></div>
+                    </div>
+                    <span class="progress-text" id="progressText">0% Complete</span>
+                </div>
+                
+                <div class="dashboard-actions">
+                    <button class="btn btn-outline btn-small" onclick="resetForm()">
+                        <i class="fas fa-redo"></i>
+                        Reset
+                    </button>
+                    <button class="btn btn-gradient btn-small" onclick="saveProfile()">
+                        <i class="fas fa-save"></i>
+                        Save
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="profile-setup-content">
+            <!-- Left Column - Profile Setup Form -->
+            <div class="profile-form-section">","explanation":"Adding a comprehensive dashboard sidebar with navigation, user info, progress tracking, and all necessary icons"}
+                <div class="form-header">
+                    <h1 class="setup-title">Set Up Your Profile</h1>
+                    <p class="setup-subtitle">Complete your profile to start matching with projects and partners.</p>
+                </div>
+
+                <!-- Profile Picture Upload -->
+                <div class="form-card">
+                    <h3 class="card-title">Profile Picture</h3>
+                    <div class="profile-picture-section">
+                        <div class="profile-picture-preview">
+                            <img id="profilePreview" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='150' viewBox='0 0 150 150'%3E%3Crect width='150' height='150' fill='%23333' rx='75'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='%23666' font-size='14'%3ENo Image%3C/text%3E%3C/svg%3E" alt="Profile Preview" class="profile-preview-img">
+                        </div>
+                        <div class="profile-picture-controls">
+                            <input type="file" id="profileImageInput" accept="image/*" style="display: none;">
+                            <button type="button" class="btn btn-primary" onclick="document.getElementById('profileImageInput').click()">
+                                <i class="fas fa-upload"></i> Upload
+                            </button>
+                            <button type="button" class="btn btn-secondary" onclick="removeProfileImage()">
+                                <i class="fas fa-trash"></i> Remove
+                            </button>
+                        </div>
+                        <p class="file-note">PNG or JPG, max 5 MB (300×300 recommended).</p>
+                    </div>
+                </div>
+
+                <!-- Personal Information -->
+                <div class="form-card">
+                    <h3 class="card-title">Personal Information</h3>
+                    <div class="form-group">
+                        <label for="fullName" class="form-label">Full Name</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-user input-icon"></i>
+                            <input type="text" id="fullName" class="form-input" placeholder="Enter your full name" aria-label="Full Name">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="currentRole" class="form-label">Current Role</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-briefcase input-icon"></i>
+                            <input type="text" id="currentRole" class="form-input" placeholder="e.g. Full Stack Developer" aria-label="Current Role">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="bio" class="form-label">Bio</label>
+                        <textarea id="bio" class="form-textarea" rows="4" placeholder="Tell us about yourself, your experience, and what you're passionate about..." aria-label="Bio"></textarea>
+                    </div>
+                </div>
+
+                <!-- Skills -->
+                <div class="form-card">
+                    <h3 class="card-title">Skills</h3>
+                    <div class="form-group">
+                        <label for="skillInput" class="form-label">Add Skills</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-code input-icon"></i>
+                            <input type="text" id="skillInput" class="form-input" placeholder="Type a skill and press Enter..." aria-label="Add Skills">
+                        </div>
+                    </div>
+                    <div id="skillsContainer" class="skills-container"></div>
+                </div>
+
+                <!-- Professional Links -->
+                <div class="form-card">
+                    <h3 class="card-title">Professional Links</h3>
+                    <div class="form-group">
+                        <label for="portfolioUrl" class="form-label">Portfolio URL</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-link input-icon"></i>
+                            <input type="url" id="portfolioUrl" class="form-input" placeholder="https://yourportfolio.com" aria-label="Portfolio URL">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="githubUsername" class="form-label">GitHub Username</label>
+                        <div class="input-wrapper">
+                            <i class="fab fa-github input-icon"></i>
+                            <input type="text" id="githubUsername" class="form-input" placeholder="yourusername" aria-label="GitHub Username">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="action-buttons">
+                    <button type="button" class="btn btn-outline" onclick="resetForm()">
+                        Cancel
+                    </button>
+                    <button type="button" class="btn btn-gradient" onclick="saveProfile()">
+                        Save Changes
+                    </button>
+                </div>
+            </div>
+
+            <!-- Right Column - Profile Preview -->
+            <div class="profile-preview-section">
+                <div class="preview-card">
+                    <h3 class="preview-title">Profile Preview</h3>
+                    <div class="preview-content">
+                        <div class="preview-profile-picture">
+                            <img id="previewProfileImage" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Crect width='120' height='120' fill='%23222' rx='60'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='%23555' font-size='12'%3ENo Image%3C/text%3E%3C/svg%3E" alt="Preview Profile" class="preview-img">
+                        </div>
+                        
+                        <div class="preview-info">
+                            <h4 id="previewName" class="preview-name">Your Name</h4>
+                            <p id="previewRole" class="preview-role">Your Role</p>
+                            <p id="previewBio" class="preview-bio">Your bio will appear here...</p>
+                        </div>
+
+                        <div class="preview-skills" id="previewSkills">
+                            <div class="skill-tag">Add skills to see them here</div>
+                        </div>
+
+                        <div class="preview-links">
+                            <a id="previewPortfolio" href="#" class="preview-link" target="_blank" style="display: none;">
+                                <i class="fas fa-external-link-alt"></i> Portfolio
+                            </a>
+                            <a id="previewGithub" href="#" class="preview-link" target="_blank" style="display: none;">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="profile.js"></script>
+</body>
+</html>
