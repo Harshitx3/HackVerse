@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillSet - Find Your Co-founder</title>
+    <link rel="stylesheet" href="../css/swipe-styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Mobile Menu Toggle -->
+    <button class="mobile-menu-toggle" id="mobileMenuToggle">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar">
+        <div class="sidebar-header">
+            <div class="logo">
+                <div class="logo-icon"></div>
+            </div>
+        </div>
+        
+        <div class="nav-items">
+            <a href="#" class="nav-item">
+                <div class="nav-icon dashboard-icon"></div>
+                <span>Dashboard</span>
+            </a>
+            <a href="#" class="nav-item active">
+                <div class="nav-icon heart-icon"></div>
+                <span>Discover</span>
+            </a>
+            <a href="#" class="nav-item">
+                <div class="nav-icon chat-icon"></div>
+                <span>Chat</span>
+            </a>
+            <a href="#" class="nav-item">
+                <div class="nav-icon profile-icon"></div>
+                <span>Profile</span>
+            </a>
+        </div>
+        
+        <div class="sidebar-footer">
+            <div class="user-avatar"></div>
+            <div class="settings-icon">
+                <i class="fas fa-cog"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Swipe Section -->
+        <section class="swipe-section">
+            <div class="section-header">
+                <h1 class="section-title">Find Your Co-founder</h1>
+                <p class="section-subtitle">Swipe right to connect with developers for your next project.</p>
+            </div>
+
+            <!-- Profile Card -->
+            <div class="profile-card">
+                <div class="card-header">
+                    <div class="profile-photo">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face" alt="Alex Chen">
+                    </div>
+                </div>
+
+                <div class="card-content">
+                    <div class="user-info">
+                        <h2 class="user-name">Alex Chen</h2>
+                        <p class="user-role">Full-Stack Developer</p>
+                    </div>
+
+                    <div class="skill-tags">
+                        <span class="skill-tag react">React</span>
+                        <span class="skill-tag python">Python</span>
+                        <span class="skill-tag nodejs">Node.js</span>
+                        <span class="skill-tag uiux">UI/UX</span>
+                        <span class="skill-tag docker">Docker</span>
+                    </div>
+
+                    <div class="user-bio">
+                        <p>I'm a passionate developer with a knack for creating scalable web applications. Currently looking for a talented co-founder to build a new SaaS product in the productivity space. My ideal partner is someone with strong design sensibilities and marketing experience. Let's create something amazing.</p>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="#" class="social-link github">
+                            <i class="fab fa-github"></i>
+                            <span>GitHub</span>
+                        </a>
+                        <a href="#" class="social-link linkedin">
+                            <i class="fab fa-linkedin"></i>
+                            <span>LinkedIn</span>
+                        </a>
+                        <a href="#" class="social-link portfolio">
+                            <i class="fas fa-globe"></i>
+                            <span>Portfolio</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Swipe Actions -->
+            <div class="swipe-actions">
+                <button class="swipe-btn pass-btn" id="passBtn">
+                    <i class="fas fa-times"></i>
+                </button>
+                <button class="swipe-btn like-btn" id="likeBtn">
+                    <i class="fas fa-heart"></i>
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <script src="../js/swipe-script.js"></script>
+</body>
+</html>
