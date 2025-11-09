@@ -3,105 +3,220 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Messages - Skill Set</title>
-    <link rel="stylesheet" href="../css/messages-alt.css">
+    <title>SkillSet - Matches & Chats</title>
+    <link rel="stylesheet" href="../css/matches-styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-    <div class="messages-container">
-        <!-- Mobile Header -->
-        <div class="mobile-header">
-            <button class="mobile-menu-toggle" aria-label="Toggle conversations">
-                <i class="fas fa-bars"></i>
-            </button>
-            <h1>Messages</h1>
+    <!-- Mobile Menu Toggle -->
+    <button class="mobile-menu-toggle" aria-label="Toggle menu">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="logo-icon">
+                <i class="fas fa-bolt"></i>
+            </div>
+            <h2 class="sidebar-title">SkillSet</h2>
         </div>
 
-        <!-- Left Sidebar - Conversations List -->
-        <aside class="conversations-sidebar" id="conversationsSidebar">
-            <div class="sidebar-header">
-                <h2>Conversations</h2>
-                <button class="new-chat-btn" aria-label="Start new conversation">
-                    <i class="fas fa-plus"></i>
+        <nav class="sidebar-nav">
+            <div class="nav-item">
+                <a href="#" class="nav-link" aria-label="Dashboard">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <span>Dashboard</span>
+                </a>
+            </div>
+            <div class="nav-item">
+                <a href="#" class="nav-link" aria-label="Discover">
+                    <i class="fas fa-search"></i>
+                    <span>Discover</span>
+                </a>
+            </div>
+            <div class="nav-item">
+                <a href="#" class="nav-link active" aria-label="Matches">
+                    <i class="fas fa-heart"></i>
+                    <span>Matches</span>
+                    <span class="nav-badge">2</span>
+                </a>
+            </div>
+            <div class="nav-item">
+                <a href="#" class="nav-link" aria-label="Profile">
+                    <i class="fas fa-user"></i>
+                    <span>Profile</span>
+                </a>
+            </div>
+        </nav>
+
+        <div class="sidebar-footer">
+            <div class="sidebar-actions">
+                <button class="settings-btn" aria-label="Settings">
+                    <i class="fas fa-cog"></i>
+                </button>
+                <button class="theme-toggle" aria-label="Toggle theme">
+                    <i class="fas fa-moon"></i>
                 </button>
             </div>
-            
-            <div class="search-container">
-                <div class="search-box">
-                    <i class="fas fa-search"></i>
-                    <input type="text" placeholder="Search conversations..." id="searchInput">
-                </div>
-            </div>
-            
-            <div class="conversations-list" id="conversationsList">
-                <!-- Conversations will be populated by JavaScript -->
-            </div>
-        </aside>
-
-        <!-- Main Chat Area -->
-        <main class="chat-area" id="chatArea">
-            <!-- Chat Header -->
-            <header class="chat-header" id="chatHeader">
-                <div class="chat-header-info">
-                    <img src="" alt="Contact avatar" class="contact-avatar" id="contactAvatar">
-                    <div class="contact-details">
-                        <h3 id="contactName">Select a conversation</h3>
-                        <span class="typing-indicator" id="typingIndicator"></span>
-                    </div>
-                </div>
-                <div class="chat-header-actions">
-                    <button class="header-btn" aria-label="Start voice call">
-                        <i class="fas fa-phone"></i>
-                    </button>
-                    <button class="header-btn" aria-label="Start video call">
-                        <i class="fas fa-video"></i>
-                    </button>
-                    <button class="header-btn" aria-label="More options">
-                        <i class="fas fa-ellipsis-v"></i>
-                    </button>
-                </div>
-            </header>
-
-            <!-- Messages Container -->
-            <div class="messages-container-inner" id="messagesContainer">
-                <div class="messages-list" id="messagesList">
-                    <!-- Messages will be populated by JavaScript -->
-                </div>
-            </div>
-
-            <!-- Message Input Area -->
-            <div class="message-input-container">
-                <div class="message-input-wrapper">
-                    <button class="attachment-btn" aria-label="Add attachment">
-                        <i class="fas fa-paperclip"></i>
-                    </button>
-                    <div class="message-input-area">
-                        <input type="text" 
-                               placeholder="Type a message..." 
-                               id="messageInput"
-                               autocomplete="off">
-                        <button class="emoji-btn" aria-label="Add emoji">
-                            <i class="far fa-smile"></i>
-                        </button>
-                    </div>
-                    <button class="send-btn" id="sendButton" aria-label="Send message">
-                        <i class="fas fa-paper-plane"></i>
-                    </button>
-                </div>
-            </div>
-        </main>
-
-        <!-- Empty State -->
-        <div class="empty-state" id="emptyState">
-            <div class="empty-state-content">
-                <i class="fas fa-comments"></i>
-                <h3>Select a conversation</h3>
-                <p>Choose a conversation from the sidebar to start messaging</p>
+            <div class="user-avatar">
+                <img src="https://images.unsplash.com/photo-1494790108755-2616b612b5bc?w=40&h=40&fit=crop&crop=face" alt="User Avatar">
             </div>
         </div>
-    </div>
+    </aside>
 
-    <script src="../js/messages-alt.js"></script>
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Matches List Section -->
+        <section class="matches-section">
+            <div class="matches-header">
+                <h1 class="matches-title">Matches & Chats</h1>
+                <div class="search-container">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" class="search-input" placeholder="Search matches..." aria-label="Search matches">
+                </div>
+            </div>
+
+            <div class="matches-list">
+                <!-- Match Item 1 - Active -->
+                <div class="match-item active">
+                    <div class="match-avatar">
+                        <img src="https://images.unsplash.com/photo-1494790108755-2616b612b5bc?w=60&h=60&fit=crop&crop=face" alt="Jane Smith">
+                        <div class="status-indicator online"></div>
+                    </div>
+                    <div class="match-info">
+                        <h3 class="match-name">Jane Smith</h3>
+                        <p class="match-preview">Hey! I'm really interested in working on that React project with you...</p>
+                    </div>
+                    <div class="match-meta">
+                        <span class="match-time">2m ago</span>
+                        <div class="unread-count">2</div>
+                    </div>
+                </div>
+
+                <!-- Match Item 2 -->
+                <div class="match-item">
+                    <div class="match-avatar">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=60&h=60&fit=crop&crop=face" alt="Mike Williams">
+                        <div class="status-indicator offline"></div>
+                    </div>
+                    <div class="match-info">
+                        <h3 class="match-name">Mike Williams</h3>
+                        <p class="match-preview">Sounds great! Let's schedule a call to discuss the project details.</p>
+                    </div>
+                    <div class="match-meta">
+                        <span class="match-time">1 day ago</span>
+                    </div>
+                </div>
+
+                <!-- Match Item 3 -->
+                <div class="match-item">
+                    <div class="match-avatar">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=60&h=60&fit=crop&crop=face" alt="Carlos Reyes">
+                        <div class="status-indicator online"></div>
+                    </div>
+                    <div class="match-info">
+                        <h3 class="match-name">Carlos Reyes</h3>
+                        <p class="match-preview">I have experience with Node.js and would love to collaborate!</p>
+                    </div>
+                    <div class="match-meta">
+                        <span class="match-time">3 days ago</span>
+                    </div>
+                </div>
+
+                <!-- Match Item 4 -->
+                <div class="match-item">
+                    <div class="match-avatar">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=60&h=60&fit=crop&crop=face" alt="Emily Chen">
+                        <div class="status-indicator away"></div>
+                    </div>
+                    <div class="match-info">
+                        <h3 class="match-name">Emily Chen</h3>
+                        <p class="match-preview">Your UI/UX design skills would be perfect for our startup!</p>
+                    </div>
+                    <div class="match-meta">
+                        <span class="match-time">5 days ago</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Chat Window Section -->
+        <section class="chat-section">
+            <div class="chat-placeholder">
+                <div class="placeholder-icon">
+                    <i class="fas fa-comments"></i>
+                </div>
+                <h2 class="placeholder-title">Welcome to your matches!</h2>
+                <p class="placeholder-text">Select a match from the list to start chatting.</p>
+            </div>
+
+            <!-- Chat Window (Hidden by default) -->
+            <div class="chat-window" style="display: none;">
+                <div class="chat-header">
+                    <div class="chat-partner">
+                        <img src="https://images.unsplash.com/photo-1494790108755-2616b612b5bc?w=40&h=40&fit=crop&crop=face" alt="Jane Smith" class="partner-avatar">
+                        <div class="partner-info">
+                            <h3 class="partner-name">Jane Smith</h3>
+                            <span class="partner-status">Online</span>
+                        </div>
+                    </div>
+                    <div class="chat-actions">
+                        <button class="action-btn" aria-label="Video call">
+                            <i class="fas fa-video"></i>
+                        </button>
+                        <button class="action-btn" aria-label="More options">
+                            <i class="fas fa-ellipsis-v"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="chat-messages">
+                    <div class="message received">
+                        <div class="message-content">
+                            <p>Hey! I'm really interested in working on that React project with you. I have 3 years of experience with React and modern JavaScript.</p>
+                            <span class="message-time">2:30 PM</span>
+                        </div>
+                    </div>
+
+                    <div class="message sent">
+                        <div class="message-content">
+                            <p>That's awesome! What kind of projects have you worked on before?</p>
+                            <span class="message-time">2:32 PM</span>
+                        </div>
+                    </div>
+
+                    <div class="message received">
+                        <div class="message-content">
+                            <p>I've built several full-stack applications using React, Node.js, and MongoDB. Recently worked on an e-commerce platform and a task management app.</p>
+                            <span class="message-time">2:35 PM</span>
+                        </div>
+                    </div>
+
+                    <div class="message sent">
+                        <div class="message-content">
+                            <p>Perfect! Those sound like great projects. Would you be available for a call this week to discuss the details?</p>
+                            <span class="message-time">2:37 PM</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chat-input-container">
+                    <div class="chat-input">
+                        <button class="attachment-btn" aria-label="Add attachment">
+                            <i class="fas fa-paperclip"></i>
+                        </button>
+                        <input type="text" class="message-input" placeholder="Type a message..." aria-label="Type message">
+                        <button class="send-btn" aria-label="Send message">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="../js/matches-script.js"></script>
 </body>
 </html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discover Profiles - HackVerse</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/matches.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>HackVerse</h1>
+                </div>
+                <nav class="nav">
+                    <a href="profile.html" class="nav-link">Profile</a>
+                    <a href="matches.html" class="nav-link active">Discover</a>
+                    <a href="messages.html" class="nav-link">Messages</a>
+                    <button onclick="handleLogout()" class="logout-btn">Logout</button>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Page Header -->
+            <div class="page-header">
+                <h2>Discover Profiles</h2>
+                <div class="profile-counter" id="profileCounter">0 of 0</div>
+            </div>
+
+            <!-- Loading Indicator -->
+            <div id="loadingIndicator" class="loading-indicator" style="display: none;">
+                <div class="spinner"></div>
+                <p>Loading profiles...</p>
+            </div>
+
+            <!-- Profile Card Container -->
+            <div id="profileCardContainer" class="profile-card-container">
+                <!-- Profile cards will be dynamically inserted here -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Scripts -->
+    <script src="js/auth-check.js"></script>
+    <script src="js/matches-script.js"></script>
+    <script>
+        // Ensure auth is required
+        requireAuth();
+    </script>
+</body>
+</html>

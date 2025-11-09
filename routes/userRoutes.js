@@ -73,6 +73,7 @@ const updateProfileValidation = [
 ];
 
 // User profile routes
+router.get('/profile/me', protect, userController.getCurrentUserProfile);
 router.get('/profile/:userId', protect, userController.getUserProfile);
 router.patch('/profile', protect, updateProfileValidation, userController.updateProfile);
 router.post('/profile/picture', protect, upload.single('profilePicture'), userController.uploadProfilePicture);

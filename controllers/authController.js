@@ -31,7 +31,8 @@ exports.register = async (req, res) => {
       fullName,
       email: email.toLowerCase(),
       password,
-      role: role || 'developer'
+      role: role || 'developer',
+      profileCompleted: true
     });
 
     // Send token and user data
@@ -323,6 +324,71 @@ exports.deleteAccount = async (req, res) => {
     res.status(500).json({
       success: false,
       message: 'Failed to delete account',
+      error: error.message
+    });
+  }
+};
+
+// Refresh token
+exports.refreshToken = async (req, res) => {
+  try {
+    const { refreshToken } = req.body;
+
+    if (!refreshToken) {
+      return res.status(401).json({
+        success: false,
+        message: 'Refresh token is required'
+      });
+    }
+
+    // Verify refresh token
+    const jwt = require('jsonwebtoken');
+    const decoded = await jwt.verify(refreshToken, process.env.JWT_REFRESH_SECRET || process.env.JWT_SECRET + '_refresh');
+
+    // Check if user still exists
+    const user = await User.findById(decoded.id);
+    if (!user || !user.isActive) {
+      return res.status(401).json({
+        success: false,
+        message: 'User not found or inactive'
+      });
+    }
+
+    // Generate new tokens
+    const newToken = jwt.sign({ id: user._id }, process.env.JWT_SECRET, {
+      expiresIn: process.env.JWT_EXPIRES_IN || '7d'
+    });
+
+    const newRefreshToken = jwt.sign({ id: user._id }, process.env.JWT_REFRESH_SECRET || process.env.JWT_SECRET + '_refresh', {
+      expiresIn: process.env.JWT_REFRESH_EXPIRES_IN || '30d'
+    });
+
+    // Set cookies
+    const cookieOptions = {
+      expires: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000), // 7 days
+      httpOnly: true,
+      secure: process.env.NODE_ENV === 'production'
+    };
+
+    res.cookie('jwt', newToken, cookieOptions);
+    res.cookie('refreshJwt', newRefreshToken, {
+      ...cookieOptions,
+      expires: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000) // 30 days
+    });
+
+    res.status(200).json({
+      success: true,
+      token: newToken,
+      refreshToken: newRefreshToken,
+      data: {
+        user
+      }
+    });
+
+  } catch (error) {
+    res.status(401).json({
+      success: false,
+      message: 'Invalid refresh token',
       error: error.message
     });
   }

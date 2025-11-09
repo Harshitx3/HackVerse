@@ -6,6 +6,9 @@
     <title>SkillSet - Find Your Co-founder</title>
     <link rel="stylesheet" href="../css/swipe-styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="../js/auth-check.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js" integrity="sha384-5gZLYQhKoaZx8f5+5e5y6r5m5n5t5u5v5w5x5y5z5" crossorigin="anonymous"></script>
 </head>
 <body>
     <!-- Mobile Menu Toggle -->
@@ -22,19 +25,19 @@
         </div>
         
         <div class="nav-items">
-            <a href="#" class="nav-item">
+            <a href="/" class="nav-item" onclick="requireAuth('/'); return false;">
                 <div class="nav-icon dashboard-icon"></div>
                 <span>Dashboard</span>
             </a>
-            <a href="#" class="nav-item active">
+            <a href="/swipe" class="nav-item active" onclick="requireAuth('/swipe'); return false;">
                 <div class="nav-icon heart-icon"></div>
                 <span>Discover</span>
             </a>
-            <a href="#" class="nav-item">
+            <a href="/messages" class="nav-item" onclick="requireAuth('/messages'); return false;">
                 <div class="nav-icon chat-icon"></div>
                 <span>Chat</span>
             </a>
-            <a href="#" class="nav-item">
+            <a href="/profile" class="nav-item" onclick="requireAuth('/profile'); return false;">
                 <div class="nav-icon profile-icon"></div>
                 <span>Profile</span>
             </a>
@@ -57,30 +60,32 @@
                 <p class="section-subtitle">Swipe right to connect with developers for your next project.</p>
             </div>
 
-            <!-- Profile Card -->
-            <div class="profile-card">
+            <!-- Swipe Container -->
+            <div class="swipe-container">
+                <!-- Profile Cards Stack -->
+            <div class="profile-card" data-user-id="1">
                 <div class="card-header">
-                    <div class="profile-photo">
-                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face" alt="Alex Chen">
+                    <div class="profile-header">
+                    
                     </div>
                 </div>
 
                 <div class="card-content">
                     <div class="user-info">
-                        <h2 class="user-name">Alex Chen</h2>
+                        <h2 class="user-name">Aarav Sharma</h2>
                         <p class="user-role">Full-Stack Developer</p>
                     </div>
 
                     <div class="skill-tags">
-                        <span class="skill-tag react">React</span>
-                        <span class="skill-tag python">Python</span>
-                        <span class="skill-tag nodejs">Node.js</span>
-                        <span class="skill-tag uiux">UI/UX</span>
-                        <span class="skill-tag docker">Docker</span>
+                        <span class="skill-tag">HTML</span>
+                        <span class="skill-tag">CSS</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">Node.js</span>
                     </div>
 
                     <div class="user-bio">
-                        <p>I'm a passionate developer with a knack for creating scalable web applications. Currently looking for a talented co-founder to build a new SaaS product in the productivity space. My ideal partner is someone with strong design sensibilities and marketing experience. Let's create something amazing.</p>
+                        <p>Aspiring full-stack developer with a passion for creating beautiful and functional web applications.</p>
                     </div>
 
                     <div class="social-links">
@@ -92,14 +97,515 @@
                             <i class="fab fa-linkedin"></i>
                             <span>LinkedIn</span>
                         </a>
-                        <a href="#" class="social-link portfolio">
-                            <i class="fas fa-globe"></i>
-                            <span>Portfolio</span>
+                    </div>
+                </div>
+            </div>
+            <div class="profile-card" data-user-id="2">
+                <div class="card-header">
+                    <div class="profile-header">
+                    
+                    </div>
+                </div>
+
+                <div class="card-content">
+                    <div class="user-info">
+                        <h2 class="user-name">Diya Patel</h2>
+                        <p class="user-role">Frontend Developer</p>
+                    </div>
+
+                    <div class="skill-tags">
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">Tailwind CSS</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">Figma</span>
+                    </div>
+
+                    <div class="user-bio">
+                        <p>Frontend developer who loves to create intuitive user interfaces with React and Tailwind CSS.</p>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="#" class="social-link github">
+                            <i class="fab fa-github"></i>
+                            <span>GitHub</span>
+                        </a>
+                        <a href="#" class="social-link linkedin">
+                            <i class="fab fa-linkedin"></i>
+                            <span>LinkedIn</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="profile-card" data-user-id="3">
+                <div class="card-header">
+                    <div class="profile-header">
+                    
+                    </div>
+                </div>
+
+                <div class="card-content">
+                    <div class="user-info">
+                        <h2 class="user-name">Rohan Kumar</h2>
+                        <p class="user-role">Backend Developer</p>
+                    </div>
+
+                    <div class="skill-tags">
+                        <span class="skill-tag">Node.js</span>
+                        <span class="skill-tag">Express</span>
+                        <span class="skill-tag">MongoDB</span>
+                        <span class="skill-tag">JavaScript</span>
+                    </div>
+
+                    <div class="user-bio">
+                        <p>Backend developer specializing in Node.js and MongoDB. Always eager to learn new technologies.</p>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="#" class="social-link github">
+                            <i class="fab fa-github"></i>
+                            <span>GitHub</span>
+                        </a>
+                        <a href="#" class="social-link linkedin">
+                            <i class="fab fa-linkedin"></i>
+                            <span>LinkedIn</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="profile-card" data-user-id="4">
+                <div class="card-header">
+                    <div class="profile-header">
+                    
+                    </div>
+                </div>
+
+                <div class="card-content">
+                    <div class="user-info">
+                        <h2 class="user-name">Ananya Singh</h2>
+                        <p class="user-role">UI/UX Designer</p>
+                    </div>
+
+                    <div class="skill-tags">
+                        <span class="skill-tag">Figma</span>
+                        <span class="skill-tag">Adobe XD</span>
+                        <span class="skill-tag">UI/UX Design</span>
+                        <span class="skill-tag">Prototyping</span>
+                    </div>
+
+                    <div class="user-bio">
+                        <p>UI/UX designer with a keen eye for detail. I enjoy creating user-centric designs that are both beautiful and easy to use.</p>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="#" class="social-link github">
+                            <i class="fab fa-github"></i>
+                            <span>GitHub</span>
+                        </a>
+                        <a href="#" class="social-link linkedin">
+                            <i class="fab fa-linkedin"></i>
+                            <span>LinkedIn</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="profile-card" data-user-id="5">
+                <div class="card-header">
+                    <div class="profile-header">
+                    
+                    </div>
+                </div>
+
+                <div class="card-content">
+                    <div class="user-info">
+                        <h2 class="user-name">Vivaan Gupta</h2>
+                        <p class="user-role">Full-Stack Developer</p>
+                    </div>
+
+                    <div class="skill-tags">
+                        <span class="skill-tag">MongoDB</span>
+                        <span class="skill-tag">Express</span>
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">Node.js</span>
+                    </div>
+
+                    <div class="user-bio">
+                        <p>Full-stack developer with experience in the MERN stack. I enjoy building scalable and maintainable applications.</p>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="#" class="social-link github">
+                            <i class="fab fa-github"></i>
+                            <span>GitHub</span>
+                        </a>
+                        <a href="#" class="social-link linkedin">
+                            <i class="fab fa-linkedin"></i>
+                            <span>LinkedIn</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="profile-card">
+                <div class="card-header">
+                    <div class="profile-header">
+                    
+                    </div>
+                </div>
+
+                <div class="card-content">
+                    <div class="user-info">
+                        <h2 class="user-name">Isha Sharma</h2>
+                        <p class="user-role">Frontend Developer</p>
+                    </div>
+
+                    <div class="skill-tags">
+                        <span class="skill-tag">HTML</span>
+                        <span class="skill-tag">CSS</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">Accessibility</span>
+                    </div>
+
+                    <div class="user-bio">
+                        <p>Frontend developer who is passionate about creating responsive and accessible websites.</p>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="#" class="social-link github">
+                            <i class="fab fa-github"></i>
+                            <span>GitHub</span>
+                        </a>
+                        <a href="#" class="social-link linkedin">
+                            <i class="fab fa-linkedin"></i>
+                            <span>LinkedIn</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="profile-card">
+                <div class="card-header">
+                    <div class="profile-header">
+                    
+                    </div>
+                </div>
+
+                <div class="card-content">
+                    <div class="user-info">
+                        <h2 class="user-name">Arjun Reddy</h2>
+                        <p class="user-role">Backend Developer</p>
+                    </div>
+
+                    <div class="skill-tags">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Django</span>
+                        <span class="skill-tag">PostgreSQL</span>
+                        <span class="skill-tag">REST APIs</span>
+                    </div>
+
+                    <div class="user-bio">
+                        <p>Backend developer with a focus on building robust and scalable APIs with Python and Django.</p>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="#" class="social-link github">
+                            <i class="fab fa-github"></i>
+                            <span>GitHub</span>
+                        </a>
+                        <a href="#" class="social-link linkedin">
+                            <i class="fab fa-linkedin"></i>
+                            <span>LinkedIn</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="profile-card">
+                <div class="card-header">
+                    <div class="profile-header">
+                    
+                    </div>
+                </div>
+
+                <div class="card-content">
+                    <div class="user-info">
+                        <h2 class="user-name">Saanvi Rao</h2>
+                        <p class="user-role">Product Designer</p>
+                    </div>
+
+                    <div class="skill-tags">
+                        <span class="skill-tag">Product Design</span>
+                        <span class="skill-tag">User Research</span>
+                        <span class="skill-tag">Wireframing</span>
+                        <span class="skill-tag">Figma</span>
+                    </div>
+
+                    <div class="user-bio">
+                        <p>Product designer who loves to solve complex problems with simple and elegant solutions.</p>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="#" class="social-link github">
+                            <i class="fab fa-github"></i>
+                            <span>GitHub</span>
+                        </a>
+                        <a href="#" class="social-link linkedin">
+                            <i class="fab fa-linkedin"></i>
+                            <span>LinkedIn</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="profile-card">
+                <div class="card-header">
+                    <div class="profile-header">
+                    
+                    </div>
+                </div>
+
+                <div class="card-content">
+                    <div class="user-info">
+                        <h2 class="user-name">Kabir Khan</h2>
+                        <p class="user-role">Mobile Developer</p>
+                    </div>
+
+                    <div class="skill-tags">
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">Kotlin</span>
+                        <span class="skill-tag">Swift</span>
+                        <span class="skill-tag">Firebase</span>
+                    </div>
+
+                    <div class="user-bio">
+                        <p>Mobile developer with experience in building native Android and iOS applications.</p>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="#" class="social-link github">
+                            <i class="fab fa-github"></i>
+                            <span>GitHub</span>
+                        </a>
+                        <a href="#" class="social-link linkedin">
+                            <i class="fab fa-linkedin"></i>
+                            <span>LinkedIn</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="profile-card">
+                <div class="card-header">
+                    <div class="profile-header">
+                    
+                    </div>
+                </div>
+
+                <div class="card-content">
+                    <div class="user-info">
+                        <h2 class="user-name">Myra Reddy</h2>
+                        <p class="user-role">Full-Stack Developer</p>
+                    </div>
+
+                    <div class="skill-tags">
+                        <span class="skill-tag">Vue.js</span>
+                        <span class="skill-tag">Svelte</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">GraphQL</span>
+                    </div>
+
+                    <div class="user-bio">
+                        <p>Full-stack developer who enjoys working with modern JavaScript frameworks like Vue.js and Svelte.</p>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="#" class="social-link github">
+                            <i class="fab fa-github"></i>
+                            <span>GitHub</span>
+                        </a>
+                        <a href="#" class="social-link linkedin">
+                            <i class="fab fa-linkedin"></i>
+                            <span>LinkedIn</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="profile-card">
+                <div class="card-header">
+                    <div class="profile-header">
+                    
+                    </div>
+                </div>
+
+                <div class="card-content">
+                    <div class="user-info">
+                        <h2 class="user-name">Advik Sharma</h2>
+                        <p class="user-role">DevOps Engineer</p>
+                    </div>
+
+                    <div class="skill-tags">
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">Kubernetes</span>
+                        <span class="skill-tag">AWS</span>
+                        <span class="skill-tag">CI/CD</span>
+                    </div>
+
+                    <div class="user-bio">
+                        <p>DevOps engineer with a passion for automating and streamlining the development process.</p>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="#" class="social-link github">
+                            <i class="fab fa-github"></i>
+                            <span>GitHub</span>
+                        </a>
+                        <a href="#" class="social-link linkedin">
+                            <i class="fab fa-linkedin"></i>
+                            <span>LinkedIn</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="profile-card">
+                <div class="card-header">
+                    <div class="profile-header">
+                    
+                    </div>
+                </div>
+
+                <div class="card-content">
+                    <div class="user-info">
+                        <h2 class="user-name">Zara Khan</h2>
+                        <p class="user-role">Graphic Designer</p>
+                    </div>
+
+                    <div class="skill-tags">
+                        <span class="skill-tag">Adobe Illustrator</span>
+                        <span class="skill-tag">Adobe Photoshop</span>
+                        <span class="skill-tag">Graphic Design</span>
+                        <span class="skill-tag">Branding</span>
+                    </div>
+
+                    <div class="user-bio">
+                        <p>Graphic designer who loves to create visually appealing and impactful designs.</p>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="#" class="social-link github">
+                            <i class="fab fa-github"></i>
+                            <span>GitHub</span>
+                        </a>
+                        <a href="#" class="social-link linkedin">
+                            <i class="fab fa-linkedin"></i>
+                            <span>LinkedIn</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="profile-card">
+                <div class="card-header">
+                    <div class="profile-header">
+                    
+                    </div>
+                </div>
+
+                <div class="card-content">
+                    <div class="user-info">
+                        <h2 class="user-name">Ishaan Patel</h2>
+                        <p class="user-role">Data Scientist</p>
+                    </div>
+
+                    <div class="skill-tags">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Pandas</span>
+                        <span class="skill-tag">NumPy</span>
+                        <span class="skill-tag">Scikit-learn</span>
+                    </div>
+
+                    <div class="user-bio">
+                        <p>Data scientist who enjoys working with large datasets and building machine learning models.</p>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="#" class="social-link github">
+                            <i class="fab fa-github"></i>
+                            <span>GitHub</span>
+                        </a>
+                        <a href="#" class="social-link linkedin">
+                            <i class="fab fa-linkedin"></i>
+                            <span>LinkedIn</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="profile-card">
+                <div class="card-header">
+                    <div class="profile-header">
+                    
+                    </div>
+                </div>
+
+                <div class="card-content">
+                    <div class="user-info">
+                        <h2 class="user-name">Anika Gupta</h2>
+                        <p class="user-role">Cybersecurity Enthusiast</p>
+                    </div>
+
+                    <div class="skill-tags">
+                        <span class="skill-tag">Cybersecurity</span>
+                        <span class="skill-tag">Penetration Testing</span>
+                        <span class="skill-tag">Network Security</span>
+                        <span class="skill-tag">Cryptography</span>
+                    </div>
+
+                    <div class="user-bio">
+                        <p>Cybersecurity enthusiast who is passionate about protecting systems and data from cyber threats.</p>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="#" class="social-link github">
+                            <i class="fab fa-github"></i>
+                            <span>GitHub</span>
+                        </a>
+                        <a href="#" class="social-link linkedin">
+                            <i class="fab fa-linkedin"></i>
+                            <span>LinkedIn</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="profile-card">
+                <div class="card-header">
+                    <div class="profile-header">
+                    
+                    </div>
+                </div>
+
+                <div class="card-content">
+                    <div class="user-info">
+                        <h2 class="user-name">Reyansh Singh</h2>
+                        <p class="user-role">Game Developer</p>
+                    </div>
+
+                    <div class="skill-tags">
+                        <span class="skill-tag">Unity</span>
+                        <span class="skill-tag">C#</span>
+                        <span class="skill-tag">Game Development</span>
+                        <span class="skill-tag">Blender</span>
+                    </div>
+
+                    <div class="user-bio">
+                        <p>Game developer who loves to create immersive and engaging games with Unity and C#.</p>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="#" class="social-link github">
+                            <i class="fab fa-github"></i>
+                            <span>GitHub</span>
+                        </a>
+                        <a href="#" class="social-link linkedin">
+                            <i class="fab fa-linkedin"></i>
+                            <span>LinkedIn</span>
                         </a>
                     </div>
                 </div>
             </div>
 
+            </div>
             <!-- Swipe Actions -->
             <div class="swipe-actions">
                 <button class="swipe-btn pass-btn" id="passBtn">
@@ -112,6 +618,7 @@
         </section>
     </main>
 
-    <script src="../js/swipe-script.js"></script>
+    <script src="../js/swipe-script.js" defer></script>
+</body>
 </body>
 </html>

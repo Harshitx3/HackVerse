@@ -1,5 +1,20 @@
 // Wait for DOM to load
 document.addEventListener('DOMContentLoaded', function() {
+    // Check authentication status and update UI
+    const token = localStorage.getItem('authToken');
+    const heroButtons = document.querySelector('.hero-buttons');
+    const sidebarFooter = document.querySelector('.sidebar-footer');
+
+    if (token) {
+        // User is logged in
+        if (heroButtons) {
+            heroButtons.innerHTML = '<button class="btn btn-primary" onclick="window.location.href=\'/profile\'">Dashboard</button>';
+        }
+        if (sidebarFooter) {
+            sidebarFooter.innerHTML = '<button class="login-btn" onclick="window.location.href=\'/profile\'">Profile</button>';
+        }
+    }
+});
     // Mobile menu toggle
 const mobileMenuToggle = document.getElementById('mobileMenuToggle');
 const sidebar = document.querySelector('.sidebar');
@@ -171,7 +186,6 @@ document.addEventListener('click', function(e) {
     });
 
     // Responsive menu toggle (for mobile)
-    const sidebar = document.querySelector('.sidebar');
     const mainContent = document.querySelector('.main-content');
     
     function handleResize() {

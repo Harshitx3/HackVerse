@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat - HackVerse</title>
+    <link rel="stylesheet" href="../css/messages.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="chat-container">
+        <!-- Chat Header -->
+        <div class="chat-header">
+            <div class="header-left">
+                <button class="back-btn" onclick="window.location.href='swipe.html'">
+                    <i class="fas fa-arrow-left"></i>
+                </button>
+                <div class="match-info">
+                    <img src="" alt="Match Avatar" class="match-avatar" id="matchAvatar">
+                    <div class="match-details">
+                        <h3 id="matchName">Loading...</h3>
+                        <p class="match-status">Online</p>
+                    </div>
+                </div>
+            </div>
+            <div class="header-right">
+                <button class="header-btn">
+                    <i class="fas fa-video"></i>
+                </button>
+                <button class="header-btn">
+                    <i class="fas fa-phone"></i>
+                </button>
+                <button class="header-btn">
+                    <i class="fas fa-ellipsis-v"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Messages Area -->
+        <div class="messages-area" id="messagesArea">
+            <div class="message welcome-message">
+                <div class="message-content">
+                    <p>🎉 You matched! Start chatting with <span id="matchNameSpan">your match</span></p>
+                    <small>This is the beginning of your conversation</small>
+                </div>
+            </div>
+        </div>
+
+        <!-- Message Input -->
+        <div class="message-input-container">
+            <div class="input-wrapper">
+                <button class="input-btn" id="emojiBtn">
+                    <i class="far fa-smile"></i>
+                </button>
+                <input type="text" id="messageInput" placeholder="Type a message..." maxlength="500">
+                <button class="input-btn" id="attachBtn">
+                    <i class="fas fa-paperclip"></i>
+                </button>
+                <button class="send-btn" id="sendBtn">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/messages.js"></script>
+</body>
+</html>

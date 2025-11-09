@@ -56,6 +56,8 @@ app.use(cookieParser());
 
 // Serve static files
 app.use(express.static(path.join(__dirname, 'public')));
+app.use('/css', express.static(path.join(__dirname, 'css')));
+app.use('/js', express.static(path.join(__dirname, 'js')));
 app.use('/uploads', express.static('uploads'));
 
 // Routes
@@ -140,7 +142,7 @@ app.use((req, res) => {
 
 // Database connection
 const PORT = process.env.PORT || 3000;
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/skillset';
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb+srv://harsatta121_db_user:5NWHnqf4zsUMiP5W@cluster0.hwdeo1g.mongodb.net/?appName=Cluster0';
 
 mongoose.connect(MONGODB_URI, {
   useNewUrlParser: true,

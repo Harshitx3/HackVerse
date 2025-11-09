@@ -78,20 +78,46 @@ function handleLogin() {
     submitBtn.querySelector('.btn-text').textContent = 'Logging in...';
     submitBtn.classList.add('loading');
     
-    // Simulate login process
-    setTimeout(() => {
-        // Reset button state
-        submitBtn.querySelector('.btn-text').textContent = originalText;
-        submitBtn.classList.remove('loading');
+    // Make actual API call
+    fetch('/api/auth/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ email, password })
+    })
+    .then(response => response.json())
+    .then(data => {
+      // Reset button state
+      submitBtn.querySelector('.btn-text').textContent = originalText;
+      submitBtn.classList.remove('loading');
+      
+      if (data.success) {
+        // Store auth data
+        localStorage.setItem('authToken', data.token);
+        localStorage.setItem('userData', JSON.stringify(data.data.user));
         
-        // Show success message (in real app, this would be actual authentication)
+        // Show success message
         showMessage('Login successful! Redirecting...', 'success');
         
-        // Redirect to main app after delay
+        // Redirect to profile after 2 seconds
         setTimeout(() => {
-            window.location.href = 'index.html';
-        }, 1500);
-    }, 2000);
+          window.location.href = '/profile';
+        }, 2000);
+      } else {
+        // Show error message
+        showMessage(data.message || 'Login failed', 'error');
+      }
+    })
+    .catch(error => {
+      // Reset button state
+      submitBtn.querySelector('.btn-text').textContent = originalText;
+      submitBtn.classList.remove('loading');
+      
+      // Show error message
+      showMessage('Network error occurred', 'error');
+      console.error('Login error:', error);
+    });
 }
 
 // Register handler
@@ -119,20 +145,46 @@ function handleRegister() {
     submitBtn.querySelector('.btn-text').textContent = 'Creating Account...';
     submitBtn.classList.add('loading');
     
-    // Simulate registration process
-    setTimeout(() => {
-        // Reset button state
-        submitBtn.querySelector('.btn-text').textContent = originalText;
-        submitBtn.classList.remove('loading');
-        
+    // Make actual API call
+    fetch('/api/auth/register', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ fullName, email, password })
+    })
+    .then(response => response.json())
+    .then(data => {
+      // Reset button state
+      submitBtn.querySelector('.btn-text').textContent = originalText;
+      submitBtn.classList.remove('loading');
+      
+      if (data.success) {
         // Show success message
-        showMessage('Account created successfully! Welcome to Skill Set!', 'success');
+        showMessage('Account created successfully! Please login.', 'success');
         
         // Switch to login tab after delay
         setTimeout(() => {
             showTab('login');
         }, 1500);
-    }, 2000);
+      } else {
+        // Show error message
+        let errorMessage = data.message || 'Registration failed';
+        if (data.errors && data.errors.length > 0) {
+            errorMessage = data.errors.map(err => err.msg).join(', ');
+        }
+        showMessage(errorMessage, 'error');
+      }
+    })
+    .catch(error => {
+      // Reset button state
+      submitBtn.querySelector('.btn-text').textContent = originalText;
+      submitBtn.classList.remove('loading');
+      
+      // Show error message
+      showMessage('Network error occurred', 'error');
+      console.error('Registration error:', error);
+    });
 }
 
 // Message display function
